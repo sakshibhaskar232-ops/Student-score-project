@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+
+# Student names
+students = [
+    "Anjali", "Aditya", "Anjali2", "Aditi", "Bhavana", "Hermione",
+    "Jaspreet", "Prikank", "Mohit", "Vansh", "Priyansh", "Vardhan",
+    "Raksha", "Sakshi1", "Nikita", "Tanya", "Prachi", "Navjot",
+    "Sakshi2", "Gayatri"
+]
+
+# Sample marks
+marks = [78, 85, 74, 88, 90, 95, 82, 76, 80, 79, 84, 91, 87, 89, 77, 83, 86, 81, 92, 88]
+
+# Calculations
+average_marks = sum(marks) / len(marks)
+highest_marks = max(marks)
+lowest_marks = min(marks)
+
+topper = students[marks.index(highest_marks)]
+lowest_scorer = students[marks.index(lowest_marks)]
+
+# Print results
+print("Average Marks:", average_marks)
+print("Highest Marks:", highest_marks, "by", topper)
+print("Lowest Marks:", lowest_marks, "by", lowest_scorer)
+
+# Visualization
+plt.figure()
+plt.bar(students, marks)
+plt.xticks(rotation=90)
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.title("Student Marks Analysis")
+
+plt.tight_layout()
+plt.show()
