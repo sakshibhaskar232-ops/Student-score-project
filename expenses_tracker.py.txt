@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+
+# Sample student data (you can edit names and marks)
+students = ["Aman", "Riya", "Karan", "Sneha", "Rahul"]
+marks = [78, 85, 67, 90, 73]
+
+# Calculations
+average_marks = sum(marks) / len(marks)
+highest_marks = max(marks)
+lowest_marks = min(marks)
+
+# Finding topper and lowest scorer
+topper = students[marks.index(highest_marks)]
+lowest_scorer = students[marks.index(lowest_marks)]
+
+# Printing results
+print("Average Marks:", average_marks)
+print("Highest Marks:", highest_marks, "by", topper)
+print("Lowest Marks:", lowest_marks, "by", lowest_scorer)
+
+# Visualization
+plt.bar(students, marks)
+plt.title("Student Marks Analysis")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+
+# Highlighting average line
+plt.axhline(y=average_marks, linestyle='--')
+
+plt.show()
